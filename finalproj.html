@@ -1,0 +1,185 @@
+<html>
+<head>
+
+<style type="text/css">
+<!--
+.bgclr {background-color: white; color: black; font-weight: bold;}
+-->
+</style>
+
+<script language="JavaScript">
+
+<!-- Begin
+// Insert number of questions
+var numQues = 8;
+
+// Insert number of choices in each question
+var numChoi = 3;
+
+// Insert number of questions displayed in answer area
+var answers = new Array(8);
+
+// Insert answers to questions
+answers[0] = "Rice and stew";
+answers[1] = "Before 8:30pm";
+answers[2] = "semo and oha soup";
+answers[3] = "Between 1pm and 2pm";
+answers[4] = "Rice and stew";
+answers[5] = "Before 8:30pm";
+answers[6] = "Your kitchen";
+answers[7] = "Yes";
+
+
+// Do not change anything below here ...
+function getScore(form) {
+var score = 0;
+var currElt;
+var currSelection;
+for (i=0; i<numQues; i++) {
+currElt = i*numChoi;
+for (j=0; j<numChoi; j++) {
+currSelection = form.elements[currElt + j];
+if (currSelection.checked) {
+if (currSelection.value == answers[i]) {
+  score++;
+  break;
+}
+}
+}
+}
+score = Math.round(score/numQues*100);
+form.percentage.value = score + "%";
+var correctAnswers = "";
+for (i=1; i<=numQues; i++) {
+correctAnswers += i + ". " + answers[i-1] + "\r\n";
+}
+form.solutions.value = correctAnswers;
+}
+//  End -->
+</script>
+<head>
+    <link  type="text/css" rel="stylesheet" href="css/final preview.css">
+    <link type="text/javascript" src="js/jquery.jsc">
+</head>
+<body>
+<table>
+            <table border="1px">
+                <tr>
+                <th colspan="2"><h1>THE FOODY APP</h1></th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv1_knnu9DeEbS6Nx3heBYUjrMrl1tDRZMLZ02Y7wIFmKZQXY_8A"></td>
+                        <td>
+                            <nav>
+                            <form name="quiz">
+                            <ul>
+                                <li>
+                                    <div><P><h3>1. What type of meal do you take for breakfast?</h3></P>
+                                    <form class="options">
+                                    <input class="option" type="radio" name="q1" value="Rice and stew">Rice and stew</input><br>
+                                    <input class="option" type="radio" name="q1" value="Bread and butter" >Bread and butter</input><br>
+                                    <input class="option" type="radio" name="q1" value="Semo and Oha soup" >Semo and Oha soup</input><br>
+                                 </div>
+                                </li>
+                                <li>
+                                    <div>
+                                    <p><h3>2. When do you take your breakfast?</h3></p>
+                                    <form class="options">
+                                    <input class="option" type="radio" name="q2" value="Before 8:30am" >Before 8:30am</input><br>
+                                    <input class="option" type="radio" name="q2" value="After 12pm" >After 12pm</input><br>
+                                    <input class="option" type="radio" name="q2" value="Between 10am and 12pm" >Between 10am and 12pm
+                                    </input><br>
+                                    </form>
+                                    </div>
+
+                                </li>
+                                    <li>
+                                    <div class="questions">
+                                    <h3>3. What type of meal do you take for lunch?</h3></P>
+                                    <input class="option" type="radio" name="q3" value="rice and stew">rice and stew</input><br>
+                                    <input class="option" type="radio" name="q3" value="semo and oha soup" >semo and oha soup</input><br>
+                                    <input class="option" type="radio" name="q3" value="snacks" >snacks</input>
+                                    </div>
+                                </li>
+
+                                <li>
+                                <div>
+                                    <h3>4. When do you take your lunch?</h3></P>
+                                    <input  class="option" type="radio" name="q4" value="Between 1pm and 2pm">Between 1pm and 2pm</input><br>
+                                    <input class="option" type="radio" name="q4" value="5pm" >5pm</input><br>
+                                    <input class="option" type="radio" name="q" value="11am" >11am</input><br>
+                                </form>
+                                </div>
+                                </li>
+
+                                <li>
+                                <div>
+                                <h3>5. What type of meal do you take for dinner?</h3></P>
+                                <input class="option" type="radio" name="q5" value="Gala and drink" >Gala and drink</input><br>
+                                <input class="option" type="radio" name="q5" value="Rice and stew"  >Rice and stew</input><br>
+                                <input class="option" type="radio" name="q5" value="Popcorn"  >Popcorn</input><br>
+                                </div>
+                                </li>
+
+
+                                <li>
+
+                                <div>
+                                <h3>6. When do you take your dinner?</h3></P>
+                                <input class="option" type="radio" name="q6"  value="3pm">3pm</input><br>
+                                <input class="option" type="radio" name="q6" value="5pm">5pm</input><br>
+                                <input class="option" type="radio" name="q6" value="between 7pm and 8pm">between 7pm and 8pm </input><br>
+                                </div>
+                                </li>
+
+
+                                <li>
+                                <div>
+                                <h3>7. Where do you get your meals from?</h3></P>
+                                <input class="option" type="radio" name="q7" value="Eateries">Eateries</input><br>
+                                <input class="option" type="radio" name="q7" value="A roadside canteen" >A roadside canteen</input><br>
+                                <input class="option" type="radio" name="q7" value="Your kitchen" >Your kitchen</input><br>
+                                </div>
+                                </li>
+                                <li>
+
+
+                                <div >
+                                <h3>8. Do you take fresh fruits?</h3></P>
+                                <input class="option" type="radio" name="q8" value="Yes">Yes</input><br>
+                                <input class="option" type="radio" name="q8" value="No" >No</input><br>
+                                <input class="option" type="radio" name="q8" value="Sometimes" >Sometimes</input><br>
+                                </div>
+                                </li>
+                                </form>
+                                <li>
+                                <div >
+                                <br>
+                                <div>
+                                    <input type="button" value="Get score" onClick="getScore(this.form)"/>
+                                    <input type="reset" value="Clear answers"/>
+                                <p> Score = <strong><input class="bgclr" type="text" size="5" name="percentage"
+                                disabled="disabled"/></strong><br/><br/>
+                                Correct answers:<br/>
+                                <textarea class="bgclr" name="solutions" wrap="virtual" rows="4" cols="30"
+                                disabled="disabled">
+                                </textarea>
+                                </div>
+                                </ul>
+                                </td>
+                                </tr>
+                                 <tr>
+
+                                <th colspan="2"><div class="footer" colspan=2 text-align="center"><marquee behaviour="alternate" direction="" scrollamount="4" loop="20">
+                                Test and improve your feeding habit by answering these simple questions.</marquee></div><P></th>
+                        </tr>
+                    </tbody>
+            </table>
+
+
+
+</body>
+
+
+</html>`
